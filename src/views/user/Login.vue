@@ -91,16 +91,6 @@
 
       <!-- 其他登陆方式 -->
       <div class="user-login-other">
-<!--        <span>{{ $t('user.login.sign-in-with') }}</span>-->
-<!--        <a>-->
-<!--          <a-icon class="item-icon" type="alipay-circle"></a-icon>-->
-<!--        </a>-->
-<!--        <a>-->
-<!--          <a-icon class="item-icon" type="taobao-circle"></a-icon>-->
-<!--        </a>-->
-<!--        <a>-->
-<!--          <a-icon class="item-icon" type="weibo-circle"></a-icon>-->
-<!--        </a>-->
         <router-link class="register" :to="{ name: 'register' }">{{ $t('user.login.signup') }}</router-link>
       </div>
     </a-form>

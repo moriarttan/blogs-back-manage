@@ -9,20 +9,20 @@
           <div class="content-title">
             {{ timeFix }}，{{ user.name }}<span class="welcome-text">，{{ welcome }}</span>
           </div>
-          <div>前端工程师 | 蚂蚁金服 - 某某某事业群 - VUE平台</div>
+          <div>全栈工程师 | 合肥亿千年信息科技有限公司 - 软件开发工程师</div>
         </div>
       </div>
     </template>
     <template v-slot:extraContent>
       <div class="extra-content">
         <div class="stat-item">
-          <a-statistic title="项目数" :value="56" />
+          <a-statistic title="文章数" :value="56" />
         </div>
         <div class="stat-item">
-          <a-statistic title="团队内排名" :value="8" suffix="/ 24" />
+          <a-statistic title="月发布次数" :value="8" suffix="/ 24" />
         </div>
         <div class="stat-item">
-          <a-statistic title="项目访问" :value="2223" />
+          <a-statistic title="网站访问" :value="2223" />
         </div>
       </div>
     </template>
