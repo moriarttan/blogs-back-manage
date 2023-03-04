@@ -1,7 +1,7 @@
 <template>
   <el-card style="margin-bottom:20px;">
     <div slot="header" class="clearfix">
-      <span>About me</span>
+      <span>关于我</span>
     </div>
 
     <div class="user-profile">
@@ -19,16 +19,16 @@
 
     <div class="user-bio">
       <div class="user-education user-bio-section">
-        <div class="user-bio-section-header"><svg-icon icon-class="education" /><span>Education</span></div>
+        <div class="user-bio-section-header"><svg-icon icon-class="education" /><span>教育</span></div>
         <div class="user-bio-section-body">
           <div class="text-muted">
-            JS in Computer Science from the University of Technology
+            安徽财经大学计算机科学技术与应用专业
           </div>
         </div>
       </div>
 
       <div class="user-skills user-bio-section">
-        <div class="user-bio-section-header"><svg-icon icon-class="skill" /><span>Skills</span></div>
+        <div class="user-bio-section-header"><svg-icon icon-class="skill" /><span>技能</span></div>
         <div class="user-bio-section-body">
           <div class="progress-item">
             <span>Vue</span>
@@ -36,15 +36,39 @@
           </div>
           <div class="progress-item">
             <span>JavaScript</span>
-            <el-progress :percentage="18" />
+            <el-progress :percentage="60" />
           </div>
           <div class="progress-item">
             <span>Css</span>
-            <el-progress :percentage="12" />
+            <el-progress :percentage="90" />
           </div>
           <div class="progress-item">
-            <span>ESLint</span>
-            <el-progress :percentage="100" status="success" />
+            <span>C#</span>
+            <el-progress :percentage="40" />
+          </div>
+          <div class="progress-item">
+            <span>Java</span>
+            <el-progress :percentage="40" />
+          </div>
+          <div class="progress-item">
+            <span>Spring Boot</span>
+            <el-progress :percentage="40" />
+          </div>
+          <div class="progress-item">
+            <span>Android</span>
+            <el-progress :percentage="10" />
+          </div>
+          <div class="progress-item">
+            <span>Mysql</span>
+            <el-progress :percentage="50" />
+          </div>
+          <div class="progress-item">
+            <span>Sqlserver</span>
+            <el-progress :percentage="50" />
+          </div>
+          <div class="progress-item">
+            <span>服务器（Windows、Linux）</span>
+            <el-progress :percentage="50" />
           </div>
         </div>
       </div>
