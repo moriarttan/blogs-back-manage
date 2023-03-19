@@ -24,19 +24,32 @@ module.exports = {
    * In most cases please use '/' !!!
    * Detail: https://cli.vuejs.org/config/#publicpath
    */
-  publicPath: '/',
+  publicPath: './',
   outputDir: 'dist',
   assetsDir: 'static',
   lintOnSave: process.env.NODE_ENV === 'development',
   productionSourceMap: false,
   devServer: {
-    port: port,
+    https: false,
+    hotOnly: false,
+    disableHostCheck: true,
     open: true,
     overlay: {
       warnings: false,
       errors: true
     },
-    before: require('./mock/mock-server.js')
+    // 跨域配置
+    proxy: {
+      // 基础服务
+      [process.env.VUE_APP_BASE_API]: {
+        target: process.env.VUE_APP_BASE_URL, // http://xxx:8201/winebutler-admin/v1
+        changeOrigin: true,
+        pathRewrite: {
+          ['^' + process.env.VUE_APP_BASE_API]: '' // /winebutler-admin
+        }
+      }
+    }
+    // before: require('./mock/mock-server.js')
   },
   configureWebpack: {
     // provide the app's title in webpack's name field, so that
