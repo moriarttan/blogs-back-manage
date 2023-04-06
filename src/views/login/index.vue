@@ -45,30 +45,37 @@
         </el-form-item>
       </el-tooltip>
 
-      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">Login</el-button>
+      <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
 
-      <div style="position:relative">
-        <div class="tips">
-          <span>Username : admin</span>
-          <span>Password : any</span>
-        </div>
-        <div class="tips">
-          <span style="margin-right:18px;">Username : editor</span>
-          <span>Password : any</span>
-        </div>
+      <div style="position:relative; padding-top: 30px;">
+<!--        <div class="tips">-->
+<!--          <span>Username : admin</span>-->
+<!--          <span>Password : any</span>-->
+<!--        </div>-->
+<!--        <div class="tips">-->
+<!--          <span style="margin-right:18px;">Username : editor</span>-->
+<!--          <span>Password : any</span>-->
+<!--        </div>-->
 
         <el-button class="thirdparty-button" type="primary" @click="showDialog=true">
-          Or connect with
+          注册账号
         </el-button>
       </div>
     </el-form>
 
-    <el-dialog title="Or connect with" :visible.sync="showDialog">
-      Can not be simulated on local, so please combine you own business simulation! ! !
-      <br>
-      <br>
-      <br>
-      <social-sign />
+    <el-dialog title="创建账号" :visible.sync="showDialog">
+      <el-form ref="registerForm" :model="registerForm" :rules="registerRules" class="login-form" autocomplete="on" label-position="left">
+
+        <el-form-item prop="username">
+          <el-input v-model="registerForm.username" placeholder="用户名" />
+        </el-form-item>
+        <el-form-item prop="password">
+          <el-input v-model="registerForm.password" placeholder="密码" />
+        </el-form-item>
+        <el-form-item prop="email">
+          <el-input v-model="registerForm.email" placeholder="邮箱" />
+        </el-form-item>
+      </el-form>
     </el-dialog>
   </div>
 </template>
@@ -82,23 +89,23 @@ export default {
   components: { SocialSign },
   data() {
     const validateUsername = (rule, value, callback) => {
-      if (!validUsername(value)) {
-        callback(new Error('Please enter the correct user name'))
-      } else {
+      // if (!validUsername(value)) {
+      //   callback(new Error('Please enter the correct user name'))
+      // } else {
         callback()
-      }
+      // }
     }
     const validatePassword = (rule, value, callback) => {
-      if (value.length < 6) {
-        callback(new Error('The password can not be less than 6 digits'))
-      } else {
+      // if (value.length < 5) {
+      //   callback(new Error('The password can not be less than 6 digits'))
+      // } else {
         callback()
-      }
+      // }
     }
     return {
       loginForm: {
-        username: 'admin',
-        password: '111111'
+        username: '15755566506@163.com',
+        password: '123456'
       },
       loginRules: {
         username: [{ required: true, trigger: 'blur', validator: validateUsername }],
@@ -109,7 +116,15 @@ export default {
       loading: false,
       showDialog: false,
       redirect: undefined,
-      otherQuery: {}
+      otherQuery: {},
+      registerForm: {
+        username: '',
+        password: ''
+      },
+      registerRules: {
+        username: [{ required: true, trigger: 'blur', validator: validateUsername }],
+        password: [{ required: true, trigger: 'blur', validator: validatePassword }]
+      },
     }
   },
   watch: {

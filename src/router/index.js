@@ -121,6 +121,19 @@ export const constantRoutes = [
         meta: { title: '档案', icon: 'user', noCache: true }
       }
     ]
+  },
+  {
+    path: '/about',
+    component: Layout,
+    redirect: '/about/index',
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/about/index'),
+        name: 'About',
+        meta: { title: '关于我', icon: 'user', noCache: true }
+      }
+    ]
   }
 ]
 
